@@ -5,7 +5,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_desc">When the button is clicked\n
-        It will display the coordinates\n
+        It will display the coordinates in this fragment\n
         of your current location</string>
 
 </resources>
