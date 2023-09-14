@@ -1,6 +1,4 @@
 
-_
-/app/src/main/java/com/capstone/map/MapKotlin.kt,9\0\907f001e2133bc14388e229921a8b317577d9491
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 :
@@ -20,8 +18,6 @@ S
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 x
 Happ/src/main/java/com/capstone/map/Fragments/BookingHistoryFragment.java,3\4\3476f19ab215fd5617bec4298faf45689dcc0f71
-x
-Happ/src/main/java/com/capstone/map/Fragments/PendingBookingFragment.java,1\3\13b34463a3e399970842fe71cdd64ddae2b5d305
 v
 Fapp/src/main/java/com/capstone/map/Utility/LocationEngineListener.java,6\1\61465d5a0132117eed9ce9272ab43aa355bfa1ee
 t
@@ -36,8 +32,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 7
@@ -48,3 +42,11 @@ $.idea/codeStyles/codeStyleConfig.xml,d\d\dd7b3350c29c49497756c7f32c69a3bed18b1
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
 L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
+x
+Happ/src/main/java/com/capstone/map/Fragments/PendingBookingFragment.java,1\3\13b34463a3e399970842fe71cdd64ddae2b5d305
+p
+@app/src/main/java/com/capstone/map/NavigationLocationProvider.kt,b\4\b47f48991d473b8020fac85b23e8d4dca2ac99ed
+_
+/app/src/main/java/com/capstone/map/MapKotlin.kt,9\0\907f001e2133bc14388e229921a8b317577d9491
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164

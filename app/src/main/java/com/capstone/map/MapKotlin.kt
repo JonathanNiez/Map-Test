@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.location.Location
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -18,12 +19,18 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationSettingsRequest
+import com.google.android.gms.location.SettingsClient
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.mapbox.geojson.Point
 import com.mapbox.maps.CameraOptions
 import com.mapbox.maps.Style
+import com.mapbox.maps.plugin.LocationPuck2D
 import com.mapbox.maps.plugin.animation.MapAnimationOptions
 import com.mapbox.maps.plugin.animation.flyTo
 import com.mapbox.maps.plugin.annotation.AnnotationConfig
@@ -34,11 +41,11 @@ import com.mapbox.maps.plugin.annotation.generated.PointAnnotation
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManager
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions
 import com.mapbox.maps.plugin.annotation.generated.createPointAnnotationManager
+import com.mapbox.maps.plugin.locationcomponent.location
 import org.json.JSONObject
 
 
 class MapKotlin : AppCompatActivity() {
-
 
     private var mapView: com.mapbox.maps.MapView? = null
     private var annotationApi: AnnotationPlugin? = null
@@ -49,16 +56,25 @@ class MapKotlin : AppCompatActivity() {
     private var latitudeList: ArrayList<Double> = ArrayList()
     private var longitudeList: ArrayList<Double> = ArrayList()
 
-    private val TAG: String = "MapActivity"
+
+    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private lateinit var settingClient: SettingsClient
+    private lateinit var locationRequest: LocationRequest
+    private lateinit var locationSettingsRequest: LocationSettingsRequest
+    private lateinit var locationCallback: LocationCallback
+    private lateinit var currentLocation: Location
+    private var requestingLocationUpdates = false
+    private val TAG: String = "DEBUG"
     private val LOCATION_PERMISSION_REQUEST_CODE = 123
 
     private lateinit var whereToLayout: FrameLayout
     private lateinit var setLocationLayout: FrameLayout
     private lateinit var imgBackBtn: ImageButton
-
+//    private lateinit var binding : ActivityMapKotlinBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        binding = ActivityMapKotlinBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_map_kotlin)
 
         setLocationLayout = findViewById(R.id.setLocationLayout)
@@ -66,12 +82,21 @@ class MapKotlin : AppCompatActivity() {
         mapView = findViewById(R.id.mapView)
         imgBackBtn = findViewById(R.id.imgBackBtn)
 
-
         createDummyMarkers()
         checkLocationPermission()
 
         imgBackBtn.setOnClickListener {
             finish()
+        }
+
+        mapView?.location?.apply {
+            this.locationPuck = LocationPuck2D(
+                bearingImage = ContextCompat.getDrawable(
+                    this@MapKotlin,
+                    R.drawable.mapbox_navigation_puck_icon
+                )
+            )
+            enabled = true
         }
 
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
@@ -122,6 +147,10 @@ class MapKotlin : AppCompatActivity() {
 
     }
 
+    private fun startLocationUpdates() {
+
+    }
+
     private fun checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(
                 this,
@@ -168,8 +197,8 @@ class MapKotlin : AppCompatActivity() {
             true
         })
 
-        var bitmap =
-            convertDrawableToBitmap(AppCompatResources.getDrawable(this, R.drawable.location_3))
+        var bitmap = convertDrawableToBitmap(AppCompatResources
+            .getDrawable(this, R.drawable.location_3))
 
         for (i in 0 until 3) {
             var jsonObject = JSONObject()
@@ -216,7 +245,6 @@ class MapKotlin : AppCompatActivity() {
             bitmap
         }
     }
-
 
     private fun flyToCameraPosition() {
         var cameraCenterCoordinates = com.mapbox.geojson.Point.fromLngLat(8.0061, 46.5778)

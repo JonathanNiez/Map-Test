@@ -18,8 +18,6 @@ x
 Happ/src/main/java/com/capstone/map/Fragments/BookingHistoryFragment.java,3\4\3476f19ab215fd5617bec4298faf45689dcc0f71
 `
 0app/src/main/java/com/capstone/map/Bookings.java,7\8\78d04ff44da05284b02b4f62b8ef30ef3a77a535
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 t
@@ -40,11 +38,15 @@ v
 Fapp/src/main/java/com/capstone/map/Utility/LocationPermissionHelper.kt,e\d\ed55301a89859100c8956be4ca20613f15f47dba
 _
 /app/src/main/java/com/capstone/map/MapJava.java,9\8\98e4e53fa82a4f170fb13f3355978efb2e6ef4d6
-x
-Happ/src/main/java/com/capstone/map/Fragments/PendingBookingFragment.java,1\3\13b34463a3e399970842fe71cdd64ddae2b5d305
 F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
+x
+Happ/src/main/java/com/capstone/map/Fragments/PendingBookingFragment.java,1\3\13b34463a3e399970842fe71cdd64ddae2b5d305
+p
+@app/src/main/java/com/capstone/map/NavigationLocationProvider.kt,b\4\b47f48991d473b8020fac85b23e8d4dca2ac99ed
 _
 /app/src/main/java/com/capstone/map/MapKotlin.kt,9\0\907f001e2133bc14388e229921a8b317577d9491
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
