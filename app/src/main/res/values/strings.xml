@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">Map</string>
 
-    <string name="mapbox_access_token">sk.eyJ1Ijoiam9uYXRoYW5uaWV6IiwiYSI6ImNsa2V0ODk1ZDA4enUzZXFzdmhhN2dpdHcifQ.sGyVZui6zrxPgSEjUydWLA</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="custom_map_style_url">
+        mapbox://styles/jonathanniez/clkg9pvym005j01qy0im6hk22
+    </string>
+
+    <string name="mapbox_access_token">
+        sk.eyJ1Ijoiam9uYXRoYW5uaWV6IiwiYSI6ImNsa2V0ODk1ZDA4enUzZXFzdmhhN2dpdHcifQ.sGyVZui6zrxPgSEjUydWLA
+    </string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="fragment_desc">When the button is clicked\n
         It will display the coordinates in this fragment\n
         of your current location</string>

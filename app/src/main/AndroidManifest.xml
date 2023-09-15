@@ -21,9 +21,6 @@
             android:name=".Bookings"
             android:exported="false" />
         <activity
-            android:name=".MapJava"
-            android:exported="false"/>
-        <activity
             android:name=".MapKotlin"
             android:exported="true">
             <intent-filter>

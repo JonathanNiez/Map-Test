@@ -22,9 +22,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-//    buildFeatures {
-//        viewBinding true
-//    }
+    viewBinding {
+        enabled = true
+    }
 
     buildTypes {
         release {
@@ -58,6 +58,8 @@ dependencies {
 //    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:5.8.0'
 //    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.6.0'
 
+    implementation "com.mapbox.navigation:android:2.10.1"
+    implementation "com.mapbox.navigation:ui-dropin:2.10.1"
 
     implementation("com.google.android.gms:play-services-location:21.0.1")
 
